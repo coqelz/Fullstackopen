@@ -1,9 +1,11 @@
-POST http://localhost:3003/api/blogs 
+POST  http://localhost:3001/api/blogs
 Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imp1aG9rb2trbyIsImlkIjoiNjQ5MWQ2ZjYyYzFkN2UzNTUxMjQxYTk5IiwiaWF0IjoxNjg3OTU3ODMzLCJleHAiOjE2ODc5NjE0MzN9._yUP97Y22xXZEqlyE0q25-G7_ApOfvh7IfEeId2hH7A
 
 {
-"title": "Blog on posts", 
-"author": "Mike Like",
+"title": "what", 
 "url": "http://localhost",
+"author": "Test",
+"user": "6491d6f62c1d7e3551241a99",
 "likes": 60
 }

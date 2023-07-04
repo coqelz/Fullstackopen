@@ -38,10 +38,12 @@ blogsRouter.post('/', async (request, response) => {
 
 blogsRouter.delete('/:id', async (request, response) => {
   const user = request.user
-  const blog = await Blog.findByIdAndRemove(request.params.id)
-  blog.user.toString() === user._id.toString()
-    ? response.status(204).end()
-    : response.status(400).json({ error: 'You are not this blogs adder' })
+  const blog = await Blog.findById(request.params.id)
+  if(blog.user.toString() === user._id.toString()){
+    await Blog.findByIdAndRemove(request.params.id)
+    response.status(204).end()
+  } else{
+    response.status(400).json({ error: 'You are not this blogs adder' })}
 })
 
 blogsRouter.put('/:id', async (request, response) => {
